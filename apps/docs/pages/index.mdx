@@ -1,0 +1,68 @@
+# Tashan app
+
+- Wardrobe management for users
+- https://docs.google.com/document/d/1msqW8jAMRkwlgiMFee2cQp54WoYcTDrTpaxOYLZ4rac/edit?usp=sharing
+
+## Monorepo details
+
+- All the apps are build inside a monorepo using https://turbo.build/repo.
+- Yarn is used as a package manager, https://yarnpkg.com/getting-started/usage.
+- All the apps and packages uses typescript and it is recommended to use typescript throughout the project.
+- Project contains three apps right now api (express app), rnative (react native mobile app), web (next admin panel).
+- Common packages are added in the packages directory.
+- Packages should be lightweight, exposing typesafe apis, well documented and easy to use.
+- Please refer to the package json of the apps and packages related to you.
+
+## Code conventions
+
+- Use - between file name when filename contains two words. eg
+```js filename="fancy-logger.ts"
+//your code
+```
+- File type in filenames wherever necessary
+```js filename="user.api.ts"
+//api code
+```
+```js filename="user.model.ts"
+//model code
+```
+- Follow [airbnb style guide](https://github.com/airbnb/javascript)
+- Avoid giving any while using typescript
+- Remove all the console logs after using it
+
+## Common tasks
+
+- Install dependencies in all projects
+  ```sh  copy
+  yarn
+  ```
+- Install a package in a workspace
+  ```sh copy
+  yarn workspace workspace add package
+  ```
+- Example
+
+  ```sh copy
+  yarn workspace rnative add axios
+  ```
+
+- Upgrade a package in a workspace
+
+  ```sh copy
+  yarn workspace workspac upgrade package
+  ```
+
+- Running scripts for a single app or package
+  ```sh copy
+  turbo run dev --filter docs
+  ```
+
+## Web admin panel react
+- App built with next js
+
+## Mobile app react native
+- Mobile app build with react native
+
+## Express api
+- Node-express api with mysql db, sequelize orm
+

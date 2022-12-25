@@ -1,0 +1,33 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**"]
+    },
+    "node-api#build": {
+      "env": [
+        "NODE_ENV",
+        "ENCRYPT",
+        "HOSTNAME",
+        "PORT",
+        "DB_NAME",
+        "DB_HOST",
+        "DB_PORT",
+        "DB_USERNAME",
+        "DB_PASSWORD",
+        "REDMINE_SERVER",
+        "REDMINE_KEY"
+      ]
+    },
+    "lint": {
+      "outputs": []
+    },
+    "dev": {
+      "cache": false
+    },
+    "clean": {}
+  },
+  "globalDependencies": [".env"],
+  "globalEnv": ["NODE_HOST", "NODE_PORT"]
+}
